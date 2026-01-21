@@ -31,12 +31,12 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
             <span className="gradient-text">About Me</span>
           </h2>
-          <p className="text-gray-400 text-lg">Get to know me better</p>
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg">Get to know me better</p>
         </motion.div>
 
         <motion.div
@@ -44,7 +44,7 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center"
         >
           {/* Left Side - Image */}
           <motion.div variants={itemVariants} className="relative">
@@ -77,16 +77,16 @@ const About = () => {
           {/* Right Side - Content */}
           <motion.div variants={itemVariants} className="space-y-6">
             <div>
-              <h3 className="text-3xl font-bold mb-4 text-gray-100">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-100">
                 Building Ideas into Scalable Digital Experiences
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3 sm:mb-4">
                I’m a Computer Science undergraduate with a deep love for building things that live on the internet. From crafting sleek user interfaces to engineering powerful backends and experimenting with AI/ML models, I enjoy every layer of the stack.
               </p>
-             <p className="text-gray-400 leading-relaxed mb-4">
+             <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3 sm:mb-4">
                 I thrive on solving meaningful problems, exploring new technologies, and turning ideas into functional digital experiences. Whether I’m debugging late at night, refining user journeys, or training intelligent systems, I bring curiosity, creativity, and consistency to everything I build.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Currently pursuing my B.Tech while sharpening my skills in MERN stack development and AI/ML, I’m on a journey to become a thoughtful software engineer who creates products that truly matter.
               </p>
             </div>

@@ -129,12 +129,12 @@
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               <span className="gradient-text">Let's Work Together</span>
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg px-4">
               Have a project in mind? Let's discuss and create something amazing
             </p>
           </motion.div>
@@ -144,7 +144,7 @@
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
             {/* Contact Info Section - Left Column */}
             <motion.div variants={itemVariants} className="space-y-8">

@@ -108,7 +108,7 @@ const Hero = () => {
 
         {/* Main Heading with gradient animation */}
         <motion.div variants={itemVariants}>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             <motion.span
               className="block text-gray-100"
               initial={{ opacity: 0, y: 20 }}
@@ -139,14 +139,14 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed font-light px-2"
           >
             I’m a passionate Software Developer who loves building modern, user-friendly applications.I turn ideas into clean, efficient code and real-world solutions.
           </motion.p>
         </motion.div>
 
         {/* CTA Buttons with Premium Design */}
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center mb-12 sm:mb-16 px-4">
           {/* Primary Pill Button */}
           <motion.a
             href="#projects"
