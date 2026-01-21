@@ -35,8 +35,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               className="absolute -inset-1 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 rounded-3xl blur-2xl opacity-100"
               animate={{
                 boxShadow: [
-                  '0 0 40px rgba(0, 212, 255, 0.2)',
-                  '0 0 60px rgba(167, 139, 250, 0.3)',
+                  '0 0 40px rgba(0, 213, 255, 0.15)',
+                  '0 0 60px rgba(183, 250, 139, 0.3)',
                   '0 0 40px rgba(0, 212, 255, 0.2)',
                 ],
               }}
@@ -49,7 +49,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={onClose}
-                className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-lg bg-dark-card hover:bg-dark-card/80 hover:border-accent-cyan/60 border border-dark-border transition-all group"
+                className="absolute top-3 right-2 w-10 h-10 flex items-center justify-center rounded-lg bg-dark-card hover:bg-dark-card/80 hover:border-accent-cyan/60 border border-dark-border transition-all group"
               >
                 <svg
                   className="w-6 h-6 text-gray-400 group-hover:text-accent-cyan transition-colors"
@@ -75,8 +75,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               >
                 {/* Image with hover effect */}
                 <motion.div
-                  className=" relative w-160 h-full rounded-2xl overflow-hidden group/img"
-                  whileHover={{ scale: 1.02 }}
+                  className="top-6 relative w-full h-full rounded-2xl overflow-hidden group/img"
+                  whileHover={{ scale: 1.0 }}
                 >
                   <motion.img
                     src={project.image}
