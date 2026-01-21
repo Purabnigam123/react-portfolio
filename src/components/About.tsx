@@ -66,7 +66,7 @@ const About = () => {
               <div className="w-full h-full bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/30 via-dark-bg to-accent-cyan/30 opacity-60" />
                 <img
-                  src="/public/me.jpeg"
+                  src="/me.jpeg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
