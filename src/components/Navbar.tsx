@@ -228,17 +228,8 @@ const Navbar = () => {
                 />
               )}
               
-              <span className="relative font-medium flex items-center gap-2">
+              <span className="relative font-medium">
                 {item.name}
-                {activeLink === item.href.replace('#', '') && (
-                  <motion.span
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-cyan-400"
-                  >
-                    ✓
-                  </motion.span>
-                )}
               </span>
             </motion.a>
           ))}

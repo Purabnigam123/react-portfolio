@@ -230,7 +230,9 @@ const Projects = () => {
               variants={itemVariants}
               onClick={() => setSelectedProject(project)}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group cursor-pointer relative"
+              className={`group cursor-pointer relative ${
+                project.id === 3 ? 'hidden lg:block' : ''
+              }`}
             >
               {/* Card container with enhanced glow on hover */}
               <motion.div 
