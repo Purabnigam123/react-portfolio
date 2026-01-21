@@ -268,13 +268,13 @@ const Projects = () => {
                     initial={{ y: 20 }}
                     whileHover={{ y: 0 }}
                   >
-                    <div>
+                    <div className="hidden sm:block">
                       <span className="text-accent-cyan font-bold text-sm">Click to view</span>
                     </div>
                     <motion.span
                       animate={{ x: [0, 4, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="text-lg"
+                      className="text-lg hidden sm:block"
                     >
                       →
                     </motion.span>
