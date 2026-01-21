@@ -32,27 +32,27 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           >
             {/* Modal Container with glow */}
             <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 rounded-3xl blur-2xl opacity-100"
+              className="absolute -inset-1 bg-gradient-to-r from-cyan-500/40 via-purple-500/40 to-pink-500/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               animate={{
                 boxShadow: [
-                  '0 0 40px rgba(0, 213, 255, 0.15)',
-                  '0 0 60px rgba(183, 250, 139, 0.3)',
-                  '0 0 40px rgba(0, 212, 255, 0.2)',
+                  '0 0 60px rgba(0, 212, 255, 0.25)',
+                  '0 0 90px rgba(168, 85, 247, 0.4)',
+                  '0 0 60px rgba(0, 212, 255, 0.3)',
                 ],
               }}
               transition={{ duration: 4, repeat: Infinity }}
             />
             
-            <div className="relative glass-effect rounded-3xl p-8 md:p-10 border border-accent-cyan/20">
+            <div className="relative glass-effect rounded-3xl p-8 md:p-10 border border-cyan-500/30 bg-slate-950/70 backdrop-blur-xl">
               {/* Close Button with enhanced styling */}
               <motion.button
-                whileHover={{ scale: 1.1, rotate: 90 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.15, rotate: 90 }}
+                whileTap={{ scale: 0.85 }}
                 onClick={onClose}
-                className="absolute top-3 right-2 w-10 h-10 flex items-center justify-center rounded-lg bg-dark-card hover:bg-dark-card/80 hover:border-accent-cyan/60 border border-dark-border transition-all group"
+                className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/40 hover:to-purple-500/40 border-2 border-cyan-500/40 hover:border-cyan-400/80 transition-all shadow-lg shadow-cyan-500/20 group"
               >
                 <svg
-                  className="w-6 h-6 text-gray-400 group-hover:text-accent-cyan transition-colors"
+                  className="w-7 h-7 text-cyan-300 group-hover:text-cyan-100 transition-colors"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -60,7 +60,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={2.5}
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
@@ -116,10 +116,11 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   {project.tags.map((tag, idx) => (
                     <motion.span
                       key={tag}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.25 + idx * 0.05 }}
-                      className="px-4 py-2 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 border border-accent-cyan/40 text-accent-cyan text-sm font-semibold rounded-full hover:border-accent-cyan/80 transition-all"
+                      initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ delay: 0.25 + idx * 0.06, duration: 0.4 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="px-4 py-2.5 bg-gradient-to-r from-cyan-500/25 to-purple-500/25 border border-cyan-500/50 text-cyan-200 text-sm font-semibold rounded-full hover:border-cyan-400/80 hover:bg-gradient-to-r hover:from-cyan-500/35 hover:to-purple-500/35 transition-all duration-300 shadow-lg shadow-cyan-500/20 cursor-pointer"
                     >
                       {tag}
                     </motion.span>
@@ -131,28 +132,30 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="flex gap-4 pt-6 border-t border-dark-border/50"
+                  className="flex gap-4 pt-8 border-t border-cyan-500/20"
                 >
                   <motion.a
                     href={project.link}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 relative overflow-hidden px-8 py-3 btn-primary text-center group"
+                    whileHover={{ scale: 1.06, y: -3 }}
+                    whileTap={{ scale: 0.93 }}
+                    className="flex-1 relative overflow-hidden px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white text-center rounded-lg font-bold shadow-lg shadow-cyan-500/40 hover:shadow-cyan-500/60 transition-all duration-300 group text-lg"
                   >
                     {/* Shimmer */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 rounded-full"
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 rounded-full"
                       animate={{
                         x: ['-100%', '100%'],
                       }}
                       transition={{
                         duration: 0.8,
+                        repeat: Infinity,
+                        repeatDelay: 3,
                       }}
                     />
-                    <span className="relative flex items-center justify-center gap-2 text-white font-semibold">
+                    <span className="relative flex items-center justify-center gap-2">
                       View Live
                       <motion.span
-                        animate={{ x: [0, 4, 0] }}
+                        animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
                         →
@@ -161,9 +164,9 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   </motion.a>
                   <motion.a
                     href={project.github}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 relative px-8 py-3 border-2 border-accent-cyan text-accent-cyan font-bold rounded-lg text-center hover:bg-accent-cyan/10 transition-all"
+                    whileHover={{ scale: 1.06, y: -3 }}
+                    whileTap={{ scale: 0.93 }}
+                    className="flex-1 relative px-8 py-4 border-2 border-cyan-500/60 text-cyan-200 font-bold rounded-lg text-center hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-cyan-100 transition-all duration-300 text-lg"
                   >
                     View Code
                   </motion.a>
@@ -236,16 +239,16 @@ const Projects = () => {
             >
               {/* Card container with enhanced glow on hover */}
               <motion.div 
-                className="absolute -inset-1 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-all duration-300"
-                whileHover={{ scale: 1.1 }}
+                className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 via-purple-500/30 to-pink-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                whileHover={{ scale: 1.15 }}
               />
               
-              <div className="relative glass-effect rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-accent-cyan/40 transition-all duration-300 h-full flex flex-col border border-accent-cyan/10 group-hover:border-accent-cyan/60">
+              <div className="relative glass-effect rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 h-full flex flex-col border border-cyan-500/20 group-hover:border-cyan-400/50">
                 {/* Project Image with enhanced animations */}
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20">
+                <div className="relative h-60 overflow-hidden bg-gradient-to-br from-cyan-500/10 to-purple-500/10 group">
                   {/* Animated overlay gradient */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-accent-cyan/30 to-accent-purple/30 opacity-0 group-hover:opacity-100 mix-blend-overlay"
+                    className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-300"
                     animate={{
                       backgroundPosition: ['0% 0%', '100% 100%'],
                     }}
@@ -259,88 +262,106 @@ const Projects = () => {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
                     className="w-full h-full object-cover"
                   />
                   
-                  {/* Enhanced hover overlay */}
+                  {/* Enhanced hover overlay with better gradient */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4"
+                    className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4"
                     initial={{ y: 20 }}
                     whileHover={{ y: 0 }}
                   >
                     <div className="hidden sm:block">
-                      <span className="text-accent-cyan font-bold text-sm">Click to view</span>
+                      <span className="text-cyan-300 font-bold text-sm">Click to view</span>
                     </div>
                     <motion.span
                       animate={{ x: [0, 4, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="text-lg hidden sm:block"
+                      className="text-lg hidden sm:block text-cyan-400"
                     >
                       →
                     </motion.span>
                   </motion.div>
                 </div>
 
-                {/* Project Info */}
-                <div className="p-6 flex-1 flex flex-col relative z-10">
-                  <h3 className="text-xl font-bold mb-2 text-gray-100 group-hover:text-accent-cyan transition-colors duration-300">
+                {/* Project Info with improved spacing */}
+                <div className="p-6 sm:p-7 flex-1 flex flex-col relative z-10">
+                  <h3 className="text-lg sm:text-xl font-bold mb-3 text-white group-hover:text-cyan-300 transition-colors duration-300 line-clamp-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 flex-1 leading-relaxed line-clamp-3">
+                  <p className="text-gray-400 text-sm sm:text-base mb-5 flex-1 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-300">
                     {project.description}
                   </p>
 
-                  {/* Tags with enhanced styling */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  {/* Tags with enhanced styling and animations */}
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {project.tags.slice(0, 2).map((tag, tagIdx) => (
                       <motion.span
                         key={tag}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.1 + tagIdx * 0.05 }}
-                        className="px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 text-accent-cyan border border-accent-cyan/30 group-hover:border-accent-cyan/60 transition-all"
+                        initial={{ opacity: 0, scale: 0.8, y: 5 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ delay: idx * 0.1 + tagIdx * 0.08, duration: 0.4 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        className="px-3.5 py-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 border border-cyan-500/40 group-hover:border-cyan-400/60 hover:bg-gradient-to-r hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300 shadow-lg shadow-cyan-500/10"
                       >
                         {tag}
                       </motion.span>
                     ))}
                     {project.tags.length > 2 && (
-                      <span className="px-3 py-1 text-xs font-semibold rounded-full bg-accent-purple/10 text-accent-purple border border-accent-purple/30">
-                        +{project.tags.length - 2}
-                      </span>
+                      <motion.span
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: idx * 0.1 + 0.16 }}
+                        viewport={{ once: true }}
+                        className="px-3.5 py-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/40 group-hover:border-purple-400/60 transition-all duration-300 shadow-lg shadow-purple-500/10"
+                      >
+                        +{project.tags.length - 2} more
+                      </motion.span>
                     )}
                   </div>
 
-                  {/* Action Buttons with enhanced effects */}
+                  {/* Action Buttons with premium effects */}
                   <div className="flex gap-3 pt-2">
                     <motion.a
                       href={project.link}
                       onClick={(e) => e.stopPropagation()}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 relative overflow-hidden px-4 py-2.5 bg-gradient-to-r from-accent-cyan to-accent-purple text-dark-bg font-semibold rounded-lg text-center text-sm hover:shadow-lg hover:shadow-accent-cyan/50 transition-all group/btn"
+                      whileHover={{ scale: 1.06, y: -2 }}
+                      whileTap={{ scale: 0.94 }}
+                      className="flex-1 relative overflow-hidden px-4 py-3 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white font-bold rounded-lg text-center text-sm hover:shadow-lg hover:shadow-cyan-500/60 transition-all duration-300 group/btn shadow-md shadow-cyan-500/30"
                     >
                       {/* Shimmer effect */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover/btn:opacity-100"
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover/btn:opacity-100"
                         animate={{
                           x: ['-100%', '100%'],
                         }}
                         transition={{
-                          duration: 0.6,
+                          duration: 0.7,
+                          repeat: Infinity,
+                          repeatDelay: 3,
                         }}
                       />
-                      <span className="relative">Visit</span>
+                      <span className="relative flex items-center justify-center gap-2">
+                        View Live
+                        <motion.span
+                          animate={{ x: [0, 3, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          →
+                        </motion.span>
+                      </span>
                     </motion.a>
                     <motion.a
                       href={project.github}
                       onClick={(e) => e.stopPropagation()}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 relative px-4 py-2.5 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg text-center text-sm hover:bg-accent-cyan/10 transition-all"
+                      whileHover={{ scale: 1.06, y: -2 }}
+                      whileTap={{ scale: 0.94 }}
+                      className="flex-1 relative px-4 py-3 border-2 border-cyan-500/60 text-cyan-300 font-bold rounded-lg text-center text-sm hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-cyan-200 transition-all duration-300 group/btn-code"
                     >
-                      Code
+                      <span className="relative">View Code</span>
                     </motion.a>
                   </div>
                 </div>
