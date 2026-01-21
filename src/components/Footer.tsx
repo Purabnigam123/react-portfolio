@@ -42,13 +42,6 @@ const Footer = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const socialIcons = [
-    { label: 'GitHub', icon: <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" alt="" />, url: 'https://github.com/Purabnigam123' },
-    { label: 'LinkedIn', icon: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/960px-LinkedIn_icon.svg.png" alt="" />, url: 'https://www.linkedin.com/in/purab-nigam-48a31326b/' },
-    { label: 'Twitter', icon: <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="" />, url: 'https://x.com/Purab421620' },
-    { label: 'Email', icon: <img src="https://images.seeklogo.com/logo-png/38/2/gmail-new-2020-logo-png_seeklogo-389043.png" alt="" />, url: 'mailto:purabnigam2005@gmail.com' },
-  ];
-
   return (
     <footer className="relative border-t border-cyan-500/30 bg-gradient-to-br from-slate-950/70 via-slate-950/80 to-slate-950/70 backdrop-blur-xl overflow-hidden">
       {/* Enhanced animated gradient overlay - subtle */}
