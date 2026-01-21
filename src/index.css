@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* Custom utility classes */
+@layer components {
+  /* Premium Glassmorphism Effect */
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md bg-black/40 border border-white/10 rounded-2xl;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-pink {
+    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  /* Smooth Scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Card Hover with Premium Feel */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  /* Premium Glow Effects */
+  .glow-cyan {
+    box-shadow:
+      0 0 30px rgba(0, 212, 255, 0.3),
+      inset 0 0 30px rgba(0, 212, 255, 0.1);
+  }
+
+  .glow-purple {
+    box-shadow:
+      0 0 30px rgba(167, 139, 250, 0.3),
+      inset 0 0 30px rgba(167, 139, 250, 0.1);
+  }
+
+  /* Ambient Glow Background */
+  .ambient-glow {
+    position: relative;
+  }
+
+  .ambient-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at bottom,
+      rgba(0, 212, 255, 0.1),
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  /* Premium Button Styles */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full overflow-hidden cursor-pointer;
+    background: linear-gradient(135deg, #0ea5e9 0%, #a78bfa 50%, #ec4899 100%);
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .btn-secondary {
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full border-2 border-cyan-400 text-cyan-400 overflow-hidden cursor-pointer;
+    background: rgba(0, 212, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(0, 212, 255, 0.15);
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-gray-100 font-sans antialiased;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Remove default styles */
+a {
+  @apply text-inherit no-underline;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
