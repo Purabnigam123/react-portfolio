@@ -43,9 +43,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative border-t border-cyan-500/30 bg-gradient-to-br from-slate-950/70 via-slate-950/80 to-slate-950/70 backdrop-blur-xl overflow-hidden">
+    <footer className="relative border-t border-blue-500/30 bg-gradient-to-br from-slate-950/70 via-slate-950/80 to-slate-950/70 backdrop-blur-xl overflow-hidden">
       {/* Enhanced animated gradient overlay - subtle */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/8 via-purple-500/8 to-pink-500/8 opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/8 via-blue-600/8 to-blue-700/8 opacity-40" />
       
       {/* Animated background glows - subtle */}
       <motion.div
@@ -54,7 +54,7 @@ const Footer = () => {
           scale: [1, 1.1, 1],
         }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute -left-40 top-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"
+        className="absolute -left-40 top-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -62,7 +62,7 @@ const Footer = () => {
           scale: [1.1, 1, 1.1],
         }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute -right-40 bottom-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
+        className="absolute -right-40 bottom-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"
       />
       
       {/* Animated background grid */}
@@ -82,7 +82,7 @@ const Footer = () => {
           {/* Brand Section - Left */}
           <motion.div variants={itemVariants} className="space-y-4 flex-shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center font-bold text-white ">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-700 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/40">
                 P
               </div>
               <h3 className="text-xl font-bold gradient-text">Purab</h3>
@@ -103,7 +103,7 @@ const Footer = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.08 }}
                   viewport={{ once: true }}
-                  whileHover={{ color: '#00d4ff', y: -2 }}
+                  whileHover={{ color: '#3F5E96', y: -2 }}
                   className="text-gray-400 hover:text-accent-cyan transition-all duration-300 text-sm font-semibold"
                 >
                   {link.name}
@@ -122,7 +122,7 @@ const Footer = () => {
               className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-gray-700 to-black hover:from-gray-600 hover:to-gray-800 transition-all duration-300 group"
               title="GitHub"
             >
-              <svg className="w-5 h-5 text-white group-hover:text-cyan-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-white group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </motion.a>
@@ -158,7 +158,7 @@ const Footer = () => {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent origin-left mb-12"
+          className="h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent origin-left mb-12"
         />
 
         {/* Bottom Section */}
@@ -195,7 +195,7 @@ const Footer = () => {
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
             whileHover={{ scale: 1.1, y: -8 }}
             whileTap={{ scale: 0.95 }}
-            className="fixed bottom-8 left-400 w-15 h-15 rounded-xl flex items-center justify-center z-40 group relative overflow-hidden border border-accent-cyan/40 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+            className="fixed bottom-8 left-400 w-15 h-15 rounded-xl flex items-center justify-center z-40 group relative overflow-hidden border border-accent-cyan/40 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 hover:shadow-lg hover:shadow-blue-500/50 transition-all"
             title="Back to top"
           >
             <motion.svg

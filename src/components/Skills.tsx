@@ -54,11 +54,11 @@ const Skills = () => {
               className="group relative overflow-hidden rounded-3xl border border-white/10 transition-all duration-300 cursor-pointer glass-effect"
             >
               {/* Premium inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-600/5 pointer-events-none" />
               
               {/* Enhanced hover glow effect */}
               <motion.div 
-                className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-300 -z-10"
+                className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-blue-600/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-300 -z-10"
                 whileHover={{ scale: 1.2 }}
               />
 
@@ -92,11 +92,11 @@ const Skills = () => {
                       transition={{ delay: categoryIdx * 0.15 + idx * 0.08 }}
                       viewport={{ once: true }}
                       whileHover={{ x: 8, scale: 1.05 }}
-                      className="group/item relative px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/50 backdrop-blur-sm transition-all duration-300 cursor-pointer overflow-hidden"
+                      className="group/item relative px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 backdrop-blur-sm transition-all duration-300 cursor-pointer overflow-hidden"
                     >
                       {/* Hover glow */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover/item:opacity-100 transition-opacity"
+                        className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 opacity-0 group-hover/item:opacity-100 transition-opacity"
                         whileHover={{ scale: 1.1 }}
                       />
 

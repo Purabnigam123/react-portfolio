@@ -44,10 +44,10 @@ const Navbar = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950/0 backdrop-blur-2xl" />
       
       {/* Decorative top glow */}
-      <div className="absolute -top-1 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+      <div className="absolute -top-1 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
       
       {/* Subtle bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-600/30 to-transparent" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -58,7 +58,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-2 group relative"
           >
-            <div className="relative w-10 h-10 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center font-bold text-white">
+            <div className="relative w-10 h-10 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-700 rounded-xl flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/40">
               P
             </div>
             <span className="relative font-bold text-xl gradient-text-pink hidden sm:inline">HELLO!!!</span>
@@ -92,7 +92,7 @@ const Navbar = () => {
                 {activeLink === item.href.replace('#', '') && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 rounded-full"
+                    className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full"
                     transition={{ type: 'spring', stiffness: 380, damping: 40 }}
                   />
                 )}

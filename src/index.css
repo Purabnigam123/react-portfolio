@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 /* Custom utility classes */
 @layer components {
@@ -13,11 +13,11 @@
 
   /* Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent;
   }
 
   .gradient-text-pink {
-    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-300 via-blue-500 to-blue-600 bg-clip-text text-transparent;
   }
 
   /* Smooth Scroll */
@@ -33,14 +33,14 @@
   /* Premium Glow Effects */
   .glow-cyan {
     box-shadow:
-      0 0 30px rgba(0, 212, 255, 0.3),
-      inset 0 0 30px rgba(0, 212, 255, 0.1);
+      0 0 30px rgba(63, 94, 150, 0.3),
+      inset 0 0 30px rgba(63, 94, 150, 0.1);
   }
 
   .glow-purple {
     box-shadow:
-      0 0 30px rgba(167, 139, 250, 0.3),
-      inset 0 0 30px rgba(167, 139, 250, 0.1);
+      0 0 30px rgba(20, 30, 48, 0.3),
+      inset 0 0 30px rgba(20, 30, 48, 0.1);
   }
 
   /* Ambient Glow Background */
@@ -54,7 +54,7 @@
     inset: 0;
     background: radial-gradient(
       circle at bottom,
-      rgba(0, 212, 255, 0.1),
+      rgba(63, 94, 150, 0.1),
       transparent 70%
     );
     pointer-events: none;
@@ -63,7 +63,7 @@
   /* Premium Button Styles */
   .btn-primary {
     @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full overflow-hidden cursor-pointer;
-    background: linear-gradient(135deg, #0ea5e9 0%, #a78bfa 50%, #ec4899 100%);
+    background: linear-gradient(135deg, #3f5e96 0%, #141e30 50%, #3f5e96 100%);
     transition: all 0.3s ease;
   }
 
@@ -72,13 +72,13 @@
   }
 
   .btn-secondary {
-    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full border-2 border-cyan-400 text-cyan-400 overflow-hidden cursor-pointer;
-    background: rgba(0, 212, 255, 0.05);
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full border-2 border-blue-500 text-blue-400 overflow-hidden cursor-pointer;
+    background: rgba(63, 94, 150, 0.05);
     transition: all 0.3s ease;
   }
 
   .btn-secondary:hover {
-    background: rgba(0, 212, 255, 0.15);
+    background: rgba(63, 94, 150, 0.15);
     transform: translateY(-2px) scale(1.02);
   }
 }
@@ -108,4 +108,56 @@ a {
 button {
   cursor: pointer;
   border: none;
+}
+
+/* Shooting Star Animations */
+@keyframes shooting-star {
+  0% {
+    transform: translateX(-100vw) translateY(-60vh) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(120vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-2 {
+  0% {
+    transform: translateX(-100vw) translateY(-40vh) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-3 {
+  0% {
+    transform: translateX(-100vw) translateY(-20vh) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(80vh) rotate(-45deg);
+    opacity: 0;
+  }
 }

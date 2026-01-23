@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { ShootingStar } from './ShootingStar';
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -52,34 +53,37 @@ const Hero = () => {
         {/* Ambient glow from bottom with purple-blue gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-purple-950/40 via-slate-950/20 to-transparent" />
         
-        {/* Soft cyan glow from left */}
+        {/* Soft slate blue glow from left */}
         <motion.div
           animate={{
             opacity: [0.7, 0.5, 0.7],
             scale: [1.75,2.5, 1.75],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -left-32 top-1/3 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+          className="absolute -left-32 top-1/3 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
         />
         
-        {/* Soft purple glow from right */}
+        {/* Soft navy blue glow from right */}
         <motion.div
           animate={{
             opacity: [0.7, 0.5, 0.7],
             scale: [1.75, 1.25, 1.75],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -right-32 bottom-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute -right-32 bottom-1/4 w-96 h-96 bg-blue-700/20 rounded-full blur-3xl"
         />
         
-        {/* Additional pink glow from bottom center */}
+        {/* Shooting Stars */}
+        <ShootingStar />
+        
+        {/* Additional blue glow from bottom center */}
         <motion.div
           animate={{
             opacity: [0.2, 0.4, 0.2],
             y: [0, 20, 0],
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -180,7 +184,7 @@ const Hero = () => {
           >
             {/* Glow effect on hover */}
             <motion.div
-              className="absolute -inset-1 bg-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 blur-l -z-10"
+              className="absolute -inset-1 bg-blue-500/20 rounded-full opacity-0 group-hover:opacity-100 blur-l -z-10"
               whileHover={{ scale: 1.2 }}
             />
             <span className="relative font-semibold flex items-center gap-2">

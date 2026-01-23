@@ -92,11 +92,11 @@ const CustomCursor = () => {
           {/* Main cursor dot */}
           <div className="relative w-3 h-3">
             {/* Solid center dot */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full shadow-lg shadow-cyan-500/50" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full shadow-lg shadow-blue-500/50" />
 
             {/* Soft glow ring */}
             <motion.div
-              className="absolute inset-0 rounded-full border border-cyan-400/60"
+              className="absolute inset-0 rounded-full border border-blue-400/60"
               animate={{
                 boxShadow: isHovering
                   ? [
@@ -113,7 +113,7 @@ const CustomCursor = () => {
             />
 
             {/* Outer glow halo */}
-            <div className="absolute -inset-2 rounded-full bg-cyan-500/10 blur-sm" />
+            <div className="absolute -inset-2 rounded-full bg-blue-500/10 blur-sm" />
           </div>
         </motion.div>
       )}
@@ -137,7 +137,7 @@ const CustomCursor = () => {
           duration: 0.8,
         }}
       >
-        <div className="w-3 h-3 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg shadow-purple-500/30" />
+        <div className="w-3 h-3 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg shadow-blue-600/30" />
       </motion.div>
       )}
     </>
