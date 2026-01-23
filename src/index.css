@@ -62,13 +62,14 @@
 
   /* Premium Button Styles */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full overflow-hidden cursor-pointer;
-    background: linear-gradient(135deg, #3f5e96 0%, #141e30 50%, #3f5e96 100%);
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full overflow-hidden cursor-pointer text-white shadow-lg shadow-blue-500/20 border border-blue-500/40;
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
     transition: all 0.3s ease;
   }
 
   .btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 7px 10px rgba(37, 99, 235, 0.35);
   }
 
   .btn-secondary {

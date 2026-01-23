@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ShootingStar } from './ShootingStar';
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -51,7 +50,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-slate-950" />
         
         {/* Ambient glow from bottom with purple-blue gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-950/40 via-slate-950/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/40 via-slate-950/20 to-transparent" />
         
         {/* Soft slate blue glow from left */}
         <motion.div
@@ -70,11 +69,9 @@ const Hero = () => {
             scale: [1.75, 1.25, 1.75],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -right-32 bottom-1/4 w-96 h-96 bg-blue-700/20 rounded-full blur-3xl"
+          className="absolute -right-32 bottom-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl"
         />
         
-        {/* Shooting Stars */}
-        <ShootingStar />
         
         {/* Additional blue glow from bottom center */}
         <motion.div
@@ -83,7 +80,7 @@ const Hero = () => {
             y: [0, 20, 0],
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"
         />
       </div>
 
