@@ -13,8 +13,8 @@ export const ShootingStar = () => {
 
   useEffect(() => {
     const starConfigs: StarConfig[] = [
-      { id: 1, animation: 'shooting-star', delay: 0, duration: 10, top: 0 },
-      { id: 2, animation: 'shooting-star-2', delay: 2, duration: 10, top: 15 },
+      { id: 1, animation: 'shooting-star', delay: 0, duration: 10, top: -10},
+      { id: 2, animation: 'shooting-star-2', delay: 2, duration: 10, top: 11 },
       
     ];
 
