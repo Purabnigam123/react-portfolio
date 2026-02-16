@@ -38,12 +38,12 @@ export const SKILLS = [
 export const PROJECTS = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce platform built with React, Node.js, and MongoDB with secure payment integration and responsive design.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    link: '#',
-    github: '#',
+    title: 'CHAT-AI',
+    description: 'A full-stack AI chat application built with the MERN stack and powered by Google Gemini AI. It delivers fast, context-aware conversations with a clean, modern UI and a scalable backend architecture.',
+    image: '../chatai.png',
+    tags: ['React', 'Node.js', 'MongoDB', 'Gemini API'],
+    link: 'https://chatai-purab.vercel.app/',
+    github: 'https://github.com/Purabnigam123/chatai',
   },
   {
     id: 2,

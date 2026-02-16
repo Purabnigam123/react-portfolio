@@ -13,165 +13,84 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/70 backdrop-blur-md z-40"
           />
 
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.85, y: 40 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="fixed inset-4 md:inset-8 lg:inset-16 max-w-3xl mx-auto my-auto z-50 "
+            className="fixed inset-4 md:inset-8 lg:inset-16 max-w-3xl mx-auto my-auto z-50 flex items-center"
           >
-            {/* Modal Container with glow */}
-            <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-blue-500/40 via-blue-600/40 to-blue-700/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              animate={{
-                boxShadow: [
-                  '0 0 60px rgba(63, 94, 150, 0.25)',
-                  '0 0 90px rgba(20, 30, 48, 0.4)',
-                  '0 0 60px rgba(63, 94, 150, 0.3)',
-                ],
-              }}
-              transition={{ duration: 4, repeat: Infinity }}
-            />
-            
-            <div className="relative glass-effect rounded-3xl p-8 md:p-10 border border-blue-500/30 bg-slate-950/70 backdrop-blur-xl">
-              {/* Close Button with enhanced styling */}
+            <div className="relative w-full rounded-2xl border border-white/10 bg-slate-950/95 backdrop-blur-xl overflow-hidden shadow-2xl shadow-blue-500/10">
+              {/* Top accent */}
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600" />
+
               <motion.button
                 whileHover={{ scale: 1.15, rotate: 90 }}
                 whileTap={{ scale: 0.85 }}
                 onClick={onClose}
-                className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center b hover:from-blue-500/40 hover:to-blue-600/40 border-2 border-blue-500/40 hover:border-blue-400/80 transition-all group"
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
               >
-                <svg
-                  className="w-7 h-7 text-blue-400 group-hover:text-blue-200 transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </motion.button>
 
-              {/* Modal Content */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="space-y-6"
-              >
-                {/* Image with hover effect */}
-                <motion.div
-                  className="top-6 relative w-full h-full rounded-2xl overflow-hidden group/img"
-                  whileHover={{ scale: 1.0 }}
-                >
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/40 to-transparent opacity-0 group-hover/img:opacity-70 transition-opacity" />
-                </motion.div>
-
-                {/* Title and Description */}
-                <div className="space-y-3">
-                  <motion.h3
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 }}
-                    className="text-4xl font-bold gradient-text"
-                  >
-                    {project.title}
-                  </motion.h3>
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-gray-300 leading-relaxed text-lg"
-                  >
-                    {project.description}
-                  </motion.p>
+              <div className="p-6 md:p-8 space-y-5 max-h-[80vh] overflow-y-auto">
+                <div className="relative w-full h-56 md:h-72 rounded-xl overflow-hidden">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
                 </div>
 
-                {/* Tags with animation */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.25 }}
-                  className="flex flex-wrap gap-3"
-                >
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{project.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{project.description}</p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, idx) => (
                     <motion.span
                       key={tag}
-                      initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ delay: 0.25 + idx * 0.06, duration: 0.4 }}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      className="px-4 py-2.5 bg-gradient-to-r from-blue-500/25 to-blue-600/25 border border-blue-500/50 text-blue-200 text-sm font-semibold rounded-full hover:border-blue-400/80 hover:bg-gradient-to-r hover:from-blue-500/35 hover:to-blue-600/35 transition-all duration-300 cursor-pointer"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="px-3 py-1.5 text-xs font-semibold rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/30"
                     >
                       {tag}
                     </motion.span>
                   ))}
-                </motion.div>
+                </div>
 
-                {/* Action Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="flex gap-4 pt-8 border-t border-cyan-500/20"
-                >
+                <div className="flex gap-3 pt-4 border-t border-white/5">
                   <motion.a
                     href={project.link}
-                    whileHover={{ scale: 1.06, y: -3 }}
-                    whileTap={{ scale: 0.93 }}
-                    className="flex-1 relative overflow-hidden px-8 py-4 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white text-center rounded-lg font-bold transition-all duration-300 group text-lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-shadow"
                   >
-                    {/* Shimmer */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 rounded-full"
-                      animate={{
-                        x: ['-100%', '100%'],
-                      }}
-                      transition={{
-                        duration: 0.8,
-                        repeat: Infinity,
-                        repeatDelay: 3,
-                      }}
-                    />
-                    <span className="relative flex items-center justify-center gap-2">
-                      View Live
-                      <motion.span
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        →
-                      </motion.span>
-                    </span>
+                    View Live →
                   </motion.a>
                   <motion.a
                     href={project.github}
-                    whileHover={{ scale: 1.06, y: -3 }}
-                    whileTap={{ scale: 0.93 }}
-                    className="flex-1 relative px-8 py-4 border-2 border-blue-500/60 text-blue-300 font-bold rounded-lg text-center hover:bg-blue-500/10 hover:border-blue-400 hover:text-blue-200 transition-all duration-300 text-lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex-1 px-6 py-3 border border-blue-500/40 text-blue-300 text-center rounded-xl font-semibold hover:bg-blue-500/10 hover:border-blue-400/60 transition-all"
                   >
                     View Code
                   </motion.a>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </>
@@ -182,193 +101,126 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[0] | null>(null);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="py-20 px-4 relative">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-4 relative">
+      {/* Background accents */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-blue-300 border border-blue-400/30 rounded-full bg-blue-500/5"
+          >
+            Portfolio
+          </motion.span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Featured Projects</span>
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base md:text-lg">A selection of my best work</p>
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-lg mx-auto">
+            A selection of my recent work — click any to learn more
+          </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project, idx) => (
             <motion.div
               key={project.id}
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              viewport={{ once: true }}
               onClick={() => setSelectedProject(project)}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className={`group cursor-pointer relative ${
-                project.id === 3 ? 'hidden lg:block' : ''
-              }`}
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
+              className="group cursor-pointer relative"
             >
-              {/* Card container with enhanced glow on hover */}
-              <motion.div 
-                className=""
-                whileHover={{ scale: 1.15 }}
-              />
-              
-              <div className="relative glass-effect rounded-2xl overflow-hidden transition-all duration-500 h-full flex flex-col border border-blue-500/20 group-hover:border-blue-400/50">
-                {/* Project Image with enhanced animations */}
-                <div className="relative h-60 overflow-hidden bg-gradient-to-br from-blue-500/10 to-blue-600/10 group">
-                  {/* Animated overlay gradient */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-300"
-                    animate={{
-                      backgroundPosition: ['0% 0%', '100% 100%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: 'reverse',
-                    }}
-                  />
-                  
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-slate-900/60 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-500 h-full flex flex-col">
+                {/* Gradient top accent */}
+                <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                {/* Project Image */}
+                <div className="relative h-64 sm:h-72 overflow-hidden">
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    whileHover={{ scale: 1.1 }}
+                    animate={{
+                      scale: hoveredId === project.id ? 1.08 : 1,
+                    }}
                     transition={{ duration: 0.6 }}
                     className="w-full h-full object-cover"
                   />
-                  
-                  {/* Enhanced hover overlay with better gradient */}
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+
+                  {/* Floating project number */}
+                  <div className="absolute top-3 left-3 w-8 h-8 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                    <span className="text-xs font-bold text-blue-300">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  {/* View prompt on hover */}
                   <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4"
-                    initial={{ y: 20 }}
-                    whileHover={{ y: 0 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{
+                      opacity: hoveredId === project.id ? 1 : 0,
+                      y: hoveredId === project.id ? 0 : 10,
+                    }}
+                    className="absolute inset-0 flex items-center justify-center"
                   >
-                    <div className="hidden sm:block">
-                      <span className="text-white-300 font-bold text-sm">Click to view</span>
+                    <div className="px-4 py-2 rounded-full bg-blue-500/90 backdrop-blur-sm text-white text-sm font-semibold shadow-lg">
+                      View Details
                     </div>
-                    <motion.span
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="text-lg hidden sm:block text-whitw-400"
-                    >
-                      →
-                    </motion.span>
                   </motion.div>
                 </div>
 
-                {/* Project Info with improved spacing */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col relative z-10">
-                  <h3 className="text-lg sm:text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors duration-300 line-clamp-2">
+                {/* Project Info */}
+                <div className="p-5 sm:p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg font-bold mb-2 text-white group-hover:text-blue-300 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm sm:text-base mb-5 flex-1 leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-gray-500 text-sm mb-4 flex-1 leading-relaxed line-clamp-2 group-hover:text-gray-400 transition-colors">
                     {project.description}
                   </p>
 
-                  {/* Tags with enhanced styling and animations */}
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {project.tags.slice(0, 2).map((tag, tagIdx) => (
-                      <motion.span
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span
                         key={tag}
-                        initial={{ opacity: 0, scale: 0.8, y: 5 }}
-                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ delay: idx * 0.1 + tagIdx * 0.08, duration: 0.4 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        className="px-3.5 py-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-300 border border-blue-500/40 group-hover:border-blue-400/60 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-blue-600/30 transition-all duration-300 shadow-lg shadow-blue-500/10"
+                        className="px-2.5 py-1 text-[10px] font-semibold tracking-wide uppercase rounded-md bg-white/[0.04] text-gray-400 border border-white/[0.06] group-hover:text-blue-300 group-hover:border-blue-500/20 transition-colors"
                       >
                         {tag}
-                      </motion.span>
-                    ))}
-                    {project.tags.length > 2 && (
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.1 + 0.16 }}
-                        viewport={{ once: true }}
-                        className="px-3.5 py-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-blue-600/20 to-blue-700/20 text-blue-300 border border-blue-600/40 group-hover:border-blue-600/60 transition-all duration-300 shadow-lg shadow-blue-600/10"
-                      >
-                        +{project.tags.length - 2} more
-                      </motion.span>
-                    )}
-                  </div>
-
-                  {/* Action Buttons with premium effects */}
-                  <div className="flex gap-3 pt-2">
-                    <motion.a
-                      href={project.link}
-                      onClick={(e) => e.stopPropagation()}
-                      whileHover={{ scale: 1.06, y: -2 }}
-                      whileTap={{ scale: 0.94 }}
-                      className="flex-1 relative overflow-hidden px-4 py-3 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-bold rounded-lg text-center text-sm  transition-all duration-300 group/btn shadow-md shadow-blue-500/30"
-                    >
-                      {/* Shimmer effect */}
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover/btn:opacity-100"
-                        animate={{
-                          x: ['-100%', '100%'],
-                        }}
-                        transition={{
-                          duration: 0.7,
-                          repeat: Infinity,
-                          repeatDelay: 3,
-                        }}
-                      />
-                      <span className="relative flex items-center justify-center gap-2">
-                        View Live
-                        <motion.span
-                          animate={{ x: [0, 3, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                          →
-                        </motion.span>
                       </span>
-                    </motion.a>
-                    <motion.a
-                      href={project.github}
-                      onClick={(e) => e.stopPropagation()}
-                      whileHover={{ scale: 1.06, y: -2 }}
-                      whileTap={{ scale: 0.94 }}
-                      className="flex-1 relative px-4 py-3 border-2 border-blue-500/60 text-blue-300 font-bold rounded-lg text-center text-sm hover:bg-blue-500/10 hover:border-blue-400 hover:text-blue-200 transition-all duration-300 group/btn-code"
-                    >
-                      <span className="relative">View Code</span>
-                    </motion.a>
+                    ))}
+                    {project.tags.length > 3 && (
+                      <span className="px-2.5 py-1 text-[10px] font-semibold rounded-md text-gray-500">
+                        +{project.tags.length - 3}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Project Modal */}
