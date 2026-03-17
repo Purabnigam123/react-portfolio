@@ -54,7 +54,42 @@ export const PROJECTS = [
     link: 'https://turosafe-purab.vercel.app/',
     github: 'https://github.com/Purabnigam123/smart-tourist-safety',
   },
-  
+  {
+    id: 3,
+    title: 'AI Chat Interface',
+    description: 'An intelligent chat interface powered by AI, featuring real-time conversations, conversation history, and a modern dark theme UI.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=cropt=crop',
+    tags: ['React', 'TypeScript', 'OpenAI API', 'Tailwind'],
+    link: '#',
+    github: '#',
+  },
+  {
+    id: 4,
+    title: 'Data Analytics Dashboard',
+    description: 'An interactive dashboard for data visualization and analytics with charts, graphs, and real-time data updates.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
+    tags: ['React', 'Chart.js', 'Node.js', 'PostgreSQL'],
+    link: '#',
+    github: '#',
+  },
+  {
+    id: 5,
+    title: 'Social Media App',
+    description: 'A social networking platform featuring user authentication, real-time messaging, and post sharing capabilities.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
+    tags: ['React', 'Firebase', 'Socket.io', 'Tailwind CSS'],
+    link: '#',
+    github: '#',
+  },
+  {
+    id: 6,
+    title: 'Learning Platform',
+    description: 'An online learning platform with video courses, quizzes, progress tracking, and certificate generation.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    link: '#',
+    github: '#',
+  },
 ];
 
 export const SOCIAL_LINKS = [
