@@ -47,12 +47,12 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A beautiful task management application with real-time updates, drag-and-drop functionality, and collaborative features.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
-    tags: ['React', 'Firebase', 'Tailwind CSS'],
-    link: '#',
-    github: '#',
+    title: 'Turosafe',
+    description: 'Turosafe is a security-first web application designed for safe and seamless digital experiences. Built with a clean, modern interface and strong focus on usability and trust. Engineered for performance, reliability, and real-world scalability.',
+    image: '../turosafe.png',
+    tags: ['React', 'mongodb', 'Tailwind CSS','Fast API'],
+    link: 'https://turosafe-purab.vercel.app/',
+    github: 'https://github.com/Purabnigam123/smart-tourist-safety',
   },
   {
     id: 3,
