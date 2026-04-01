@@ -54,6 +54,15 @@ export const PROJECTS = [
     link: 'https://turosafe-purab.vercel.app/',
     github: 'https://github.com/Purabnigam123/smart-tourist-safety',
   },
+  {
+    id: 3,
+    title: 'Audix',
+    description: 'Audix is a modern headphone e-commerce platform delivering premium sound experiences with a sleek, user-friendly interface.Explore, compare, and shop high-quality audio products with smooth navigation, smart features, and a visually immersive design.',
+    image: '/audix.png',
+    tags: ['React', 'mongodb', 'Tailwind CSS','node.js'],
+    link: 'https://audix-purab.vercel.app/',
+    github: 'https://github.com/Purabnigam123/audix',
+  },
   
 ];
 
